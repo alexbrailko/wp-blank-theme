@@ -1,0 +1,529 @@
+
+/*
+ * Set up defaults
+ */
+ 
+@flyout_breakpoint: @medium_width;// Defaults to mobile breakpoint but can be overwritten here
+@flyout_width: 70%;
+@flyout_button: @headings_color;
+@flyout_background: @light_text;
+@flyout_transition_time: 0.3s;
+@tabl_to_flyout: ~"all and (min-width: @{medium_width}) and (max-width: @wrapper_width)";
+@from_flyout: ~"all and (min-width: " (@flyout_breakpoint + 1) ~ ")";
+
+@flyout: ~"all and (max-width: @{flyout_breakpoint})";
+
+
+/*
+ * Main Menu
+ */
+
+.mainMenu {
+    //.nav();
+    float: left; 
+    margin: 5px 0 0 15px;
+
+    @media @tabl_to_flyout {
+        width: ~"calc(100% - 120px)";
+        margin-top: 25px;
+        line-height: 15px;
+        padding-left: 20px;
+    }
+
+    @media @flyout {
+        float: none;
+        transform: none;
+        margin: 0;
+    }
+
+    li {
+        display: inline-block;
+        position: relative;
+
+        @media @flyout {
+            clear: left;
+            width: 100%;
+        }
+
+        &.current_page_item a{
+            color: @primary_color;
+        }
+
+        &.menu-item-has-children:after {
+            .fa('f107', @light_text);
+            .rems(13);
+            position: absolute;
+            /* margin: 0 auto; */
+            left: 0;
+            right: 0;
+            text-align: center;
+            margin-top: 3px;
+
+            @media @flyout {
+                display: none;
+            }
+        }
+        &.menu-item-has-children.current_page_item:after {
+            .fa('f107', @primary_color);
+            .rems(13);
+        }
+
+        &.current-menu-ancestor {
+            a {
+                color: @primary_color;
+            }
+
+            &:after {
+                .fa('f107', @primary_color);
+                .rems(13);
+            }
+        }
+
+        ul.sub-menu {
+
+            @media @from_flyout {
+                padding-top: 20px;
+                display: none;
+                position: absolute;
+                z-index: 99;
+                //left: -125px;
+                left: -30%;
+                //width: 300px;
+                
+                text-align: center;
+            }
+
+            @media @flyout {
+                position: relative;
+            }
+
+            li {
+                display: block;
+                border-bottom: 1px solid @light_text;
+                background-color: rgba(0,0,0,.7);
+
+                @media @flyout {
+                    background-color: transparent;
+                }
+
+                &:first-child {
+                    border-top-right-radius: @border_radius;
+                    border-top-left-radius: @border_radius;
+                }
+
+                &:last-child {
+                    border-bottom: none;
+                    border-bottom-right-radius: @border_radius;
+                    border-bottom-left-radius: @border_radius;
+                }
+
+                &.current_page_item a {
+                    color: @primary_color;
+
+                    @media @flyout {
+                        color: @headings_color;
+                    }
+                }
+
+                a {
+                    color: #fff;
+                    display: block;
+                    padding: 6px 30px;
+                    display: block;
+
+                    @media @desktop {
+                        white-space: nowrap;
+                    }
+
+                    @media @flyout {
+                        color: @text_color;
+                    }
+
+                    @media @from_flyout {
+                        &:hover {
+                            color: @primary_color;
+                        }
+                    }
+                }
+            }
+        }
+
+        &:hover ul { 
+            
+            @media @from_flyout {
+                display: block;
+            }
+        }
+
+        &.menu-item-language-current {
+            margin-right: 0;
+            border: 1px solid @border;
+            padding: 13px;
+            border-radius: 50%;
+            width: 43px;
+            height: 43px;
+            letter-spacing: 1px;
+            color: #717171;
+            .rems(12);
+
+            &:after {
+                display: none;
+            }
+
+            @media @desktop {
+                &:hover ul {
+                    width: 75px;
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+
+    li {
+
+        a {
+            padding: 10px;
+            color: @headings_color;
+            transition: color 0.3s;
+
+            @media @from_flyout {
+                &:hover {
+                    color: @primary_color;
+                }
+            }
+
+            @media @flyout {
+                padding: 0 15px 0 ;
+                display: block;
+                position: relative;
+                line-height: 40px;
+                .rems(18);
+            }
+        }
+
+        &.hasChildren, &.menu-item-has-children {
+
+            > a {
+
+                &:after {
+
+                    @media @flyout {
+                        .fa("f0da", @headings_color);
+                        position: absolute;
+                        top: 20px;
+                        right: 15px;
+                        padding: 0 0 0 2px;
+                        transform: translateY(-50%);
+                        transition: transform 0.3s;
+                        color: #fff;
+                    }
+                }
+            }
+
+            &.open {
+
+                > a {
+
+                    &:after {
+
+                        @media @flyout {
+                            transform: translateY(-50%) rotate(90deg);
+                        }
+                    }
+                }
+            }
+        }
+
+        ul {
+
+            @media @flyout {
+                display: none;
+                padding: 0 0 0 10px;
+            }
+        }
+
+        &.childActive {
+
+            a {
+                //color: @secondary_color;
+            }
+
+            > ul {
+
+                @media @flyout {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+.siteWrapper {
+    position: relative;
+    min-height: 100%;
+    overflow: hidden;
+
+    .fixedFlyout & {
+
+        @media @flyout {
+            padding: 104px 0 0;
+        }
+    }
+}
+
+.siteInnerWrapper {
+    width: 100%;
+
+    .flyoutInitialised & {
+        transition: transform @flyout_transition_time ease-in-out;
+    }
+}
+
+#header {
+
+    .flyoutInitialised & {
+
+        @media @flyout {
+            transition: left @flyout_transition_time ease-in-out, right @flyout_transition_time ease-in-out;
+        }
+    }
+
+    .fixedFlyout & {
+
+        @media @flyout {
+            position: fixed!important;
+            width: 100%;
+            min-width: 320px;
+            top: 0;
+        }
+    }
+}
+
+footer {
+
+    .flyoutInitialised & {
+        transition: transform @flyout_transition_time ease-in-out;
+    }
+}
+
+.footerWrap {
+
+    .fixedFlyout & {
+
+        @media @flyout {
+            transition: transform @flyout_transition_time ease-in-out;
+        }
+    }
+}
+
+/*
+ * Breakpoint for mobile menu to appear, can be set to whatever site needs
+*/
+
+.flyoutButton {
+    cursor: pointer;
+    padding: 15px 0;
+    display: none;
+
+    @media @flyout {
+        display: block;
+    }
+
+    @media @mobile {
+        
+    }
+
+    &:before {
+        display: inline-block;
+        margin-right: 5px;
+        .rems(11);
+        font-weight: 600;
+        text-transform: uppercase;
+        line-height: 20px;
+        vertical-align: middle;
+        color: @flyout_button;
+        content: 'Menu';
+    }
+
+    span {
+        width: 22px;
+        height: 2px;
+        display: inline-block;
+        position: relative;
+        background: @flyout_button;
+        vertical-align: middle;
+        transition: background 100ms ease-in-out @flyout_transition_time;
+
+        &:before, &:after {
+            height: 2px;
+            background: @flyout_button;
+            position: absolute;
+            left: 0;
+            content: '';
+            transform: rotate3d(0, 0, 0, 0deg);
+            transition: transform 300ms linear 0ms, top 300ms linear 400ms, width 300ms linear 700ms;
+        }
+
+        &:before {
+            top: -6px;
+            width: 22px;
+        }
+
+        &:after {
+            top: 6px;
+            width: 22px;
+        }
+
+        .flyoutActive & {
+            background: transparent;
+            transition: background 100ms ease-in-out 600ms;
+
+            &:before, &:after {
+                transition: width 300ms linear 0ms, top 300ms linear 300ms, transform 300ms linear 700ms;
+            }
+
+            &:before {
+                top: 0;
+                width: 22px;
+                transform: rotate3d(0, 0, 1, -45deg);
+            }
+
+            &:after {
+                top: 0;
+                width: 22px;
+                transform: rotate3d(0, 0, 1, 45deg);
+            }
+        }
+    }
+}
+
+@media @flyout {
+
+    .flyoutWrap {
+        position: fixed;
+        top: 0;
+        width: @flyout_width;
+        background: @flyout_background;
+        z-index: 20;
+        overflow: auto;
+        display: none;
+
+        .flyoutInitialised & {
+            transition: transform @flyout_transition_time ease-in-out;
+            display: block; 
+        }
+    }
+
+    .flyoutRight {
+
+        .flyoutButton {
+            float: left;
+        }
+
+        &.flyoutMove {
+
+            .flyoutButton {
+                float: right;
+            }
+        }
+
+        .flyoutWrap {
+            left: 100%;
+            bottom: 0;
+        }
+
+        #header {
+            right: 0;
+            position: relative;
+        }
+
+        &.flyoutActive {
+
+            .flyoutWrap {
+                transform: translateX(-100%);
+            }
+
+            &.flyoutMove {
+
+                .siteInnerWrapper, footer {
+                    transform: translateX(-@flyout_width);
+
+                }
+
+                #header {
+                    right: @flyout_width;
+                }
+            }
+        }
+    }
+
+    .flyoutLeft {
+
+        .flyoutButton {
+            float: right;
+        }
+
+        &.flyoutMove {
+
+            .flyoutButton {
+                float: right;
+            }
+        }
+
+        .flyoutWrap {
+            right: 100%;
+            bottom: 0;
+        }
+
+        #header {
+            left: 0;
+            position: relative;
+        }
+
+        &.flyoutActive {
+
+            .flyoutWrap {
+                transform: translateX(100%);
+            }
+
+            &.flyoutMove {
+
+                .siteInnerWrapper, footer {
+                    transform: translateX(@flyout_width);
+                }
+
+                #header {
+                    left: @flyout_width;
+                }
+            }
+        }
+    }
+
+    .flyoutTop {
+
+        .flyoutButton {
+            float: right;
+            position: relative;
+            z-index: 21;
+        }
+
+        .flyoutWrap {
+            width: 100%;
+            transform: translateY(-100%);
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        &.flyoutActive {
+
+            .flyoutWrap {
+                transform: translateY(0);
+            }
+        }
+    }
+}
+
+.flyoutActive header .top .navigation nav {
+    display: block;
+}

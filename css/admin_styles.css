@@ -1,0 +1,13 @@
+/*
+ * th#icl_translations, td.icl_translations a, #icl_translations img, .column-icl_translations img, #icl_how_to_translate_link, #icl_div, #icl_div_config {
+    display: inline-block;!important;
+} 
+ */
+
+#icl_div {
+    display: block;
+}
+
+.error.wpml-admin-notice {
+    display: none;
+}

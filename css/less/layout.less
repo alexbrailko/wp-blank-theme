@@ -1,0 +1,419 @@
+header {
+	height: 80px;
+    z-index: 99;
+    background: #fff;
+
+	@media @flyout {
+		padding: 0 20px;		
+	}
+
+	.logo {
+		display: inline-block;
+		float: left;
+
+		img {
+			@media @mobile {
+				max-width: 150px;
+				margin-top: 5px;
+			}
+		}
+	}
+
+	.wrapper {
+
+		nav {
+			display: inline-block;
+			float: left;
+			margin-top: 30px;
+			margin-left: 70px;
+
+			@media @desktop {
+				//width: 665px;
+			}
+
+			@media @flyout {
+				//display: none; 
+                margin-left: 0;
+                width: 100%;
+			}
+		}
+	}
+}
+
+section.slider {
+    display: block;
+    float: left;
+    width: 100%;
+}
+
+footer {
+	border-top: 3px solid #f0f0f0;
+	padding: 57px 0;
+	.clearfix();
+	float: left;
+	width: 100%;
+	background-color: #fff;
+
+	@media @tablet, @mobile {
+		padding: 35px 20px;
+	}
+
+	a, p, span {
+
+		.rems(13);
+		font-weight: normal;
+	}
+
+	a {
+		.hover;
+	}
+
+	.col4 {
+		width: 25%;
+		float: left;
+
+		@media @desktop {
+			&:nth-of-type(2) {
+				padding-left: 95px;
+			}
+		}
+
+		@media @tablet {
+			padding-right: 10px;
+		}
+
+		@media @mobile {
+			width: 50%;
+			text-align: center;
+		}
+
+		&:nth-of-type(3) {
+			@media @mobile {
+				clear: both;
+			}
+		}
+
+		.text {
+			margin-top: 20px;
+			margin-bottom: 27px;
+			font-weight: normal;
+			.rems(13);
+			line-height: 25px;
+		}
+
+		.copyright {
+			display: block;
+		}
+
+		h3 {
+			color: @primary_color;
+			margin-bottom: 30px;
+			margin-top: 25px;
+		}
+
+		li {
+			line-height: 27px;
+
+			.sub-menu {
+				display: none;
+			}
+		}
+
+		.social {
+			a {
+				display: block;
+				line-height: 27px;
+			}
+		}
+
+		.email_wrap {
+			position: relative;
+			margin-bottom: 10px;
+
+			input {
+				border-radius: 3px;
+				border: solid 1px #d6d6d6;
+				padding: 10px;
+				margin-top: 20px;
+				max-width: 100%;
+
+				&.wpcf7-not-valid {
+					border: 1px solid #f00;
+				}
+			}
+
+			.plane {
+				background: url('../img/foter-subscribe-mail.png') no-repeat;
+				width: 13px;
+				height: 13px;
+				position: absolute;
+				right: 10px;
+				top: 35px;
+				display: inline-block;
+			}
+
+
+		}
+
+		.wpcf7-submit {
+			padding: 10px 25px;
+		}
+
+
+		div.wpcf7-validation-errors {
+			display: none!important;
+		}
+	}
+}
+
+/*
+ *  Home
+ */
+
+ .homeContent {
+ 	.clearfix();
+ 	margin-top: 10px;
+
+ 	@media @mobile {
+ 		margin-bottom: 0!important;
+ 	}
+
+ 	.titleWrap {
+ 		margin-top: 45px;
+
+ 		@media @mobile {
+ 			text-align: center;
+ 			margin-top: 30px;
+ 		}
+
+ 		h1 {
+ 			margin-top: 10px;
+
+ 			@media @mobile {
+ 				float: none;
+ 			}
+ 		}
+
+ 		a {
+ 			@media @mobile {
+ 				float: none;
+ 			}
+ 		}
+ 	}
+ }
+
+ /*
+  * Secondary pages
+  */
+
+.pageWrap {
+    margin: 50px 0;
+    .clearfix();
+
+  	@media @tablet, @mobile {
+  		padding: 0 20px;
+  	}
+
+}
+
+/*
+ * Top banner
+ */
+
+.topBanner {
+    .clearfix();
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+
+    .bannerBg {
+        .overlay(#000, 0.5);
+        z-index: 5;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 0 auto;
+        right: 0;
+        width: 2000px;
+        max-width: 2000px;
+
+        @media @mobile {
+            margin: 0;
+            left: 0;
+            top: 0;
+            width: 100%;
+            max-width: 100%;
+            position: relative;
+        }
+
+        img {
+
+            z-index: 2;
+        }
+    }
+
+    .topBannerContent {
+       height: 350px;
+       display: table;
+       position: relative;
+       z-index: 10;
+       width: 100%;
+       max-width: 1200px;
+       margin: 0 auto;
+
+       @media @mobile {
+           height: 100%;
+           position: absolute;
+           display: block;
+       }
+
+       .topBannerContentInner {
+            display: table-cell;
+            vertical-align: middle;
+
+            @media @mobile {
+                display: table;
+                height: 100%;
+            }
+       }
+
+       .titleWrap {
+
+        @media @mobile {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+           h1 {
+               .rems(42);
+               color: #fff;
+               margin-bottom: 0;
+
+               @media @mobile {
+                   .rems(35);
+               }
+           }
+
+           h3 {
+               .rems(26);
+               color: #fff;
+               font-family: @primaryFont;
+               font-weight: normal;
+           }
+       }
+
+        p {
+            .rems(20);
+            color: #fff;
+            margin-top: 27px;
+
+            @media @tablet {
+                margin-top: 15px;
+            }
+        }
+
+    }
+}
+
+
+.blogPosts {
+
+    li {
+        float: left;
+        width: 32%;
+        margin-bottom: 20px;
+        text-align: center;
+        border-radius: 3px;
+
+         &:not(:nth-of-type(3n)) {
+            margin-right: 2%;
+        }
+
+        .cont {
+            min-height: 180px;
+            padding: 35px 30px;
+            box-shadow: 0 0 20px rgba(0,0,0,.05);
+
+            .date {
+                .rems(13);
+                color: @light_text;
+            }
+
+            h3 {
+                line-height: 25px;
+                .rems(16);
+                margin-top: 30px;
+            }
+        }
+    }
+}
+
+.servicesPage{
+
+    .serv-menu{
+        width: 30%;
+        margin-right: 2%;
+        float:left;
+
+        @media @mobile {
+            width: 100%;
+            margin-right: 0;
+            margin-bottom: 30px;
+        }
+
+        li{
+            background: none;
+            border-bottom:1px solid @border;
+            padding-left:0;
+            padding-bottom:13px;
+
+            a{
+ 
+            }
+        }
+
+        li:not(:first-of-type){
+            padding-top:14px;
+        }
+
+        .titleWrap {
+            
+            @media @mobile {
+                .title {
+                    cursor: pointer;
+                    
+                    &:after {
+                        .fa('f107', @headings_color);
+                        float: right;
+                    }
+
+                    &.open:after {
+                        .fa('f106', @headings_color);
+                    }
+                }
+            }
+        }
+
+    }
+    .serv-text{
+        float:left;
+        width: 68%;
+        border-left:1px solid @border;
+        padding-left:30px;
+
+        @media @mobile {
+               width: 100%;
+               padding-left: 0;
+               border-left: none;
+           }   
+
+        .serv-image{
+            float:left;
+        }
+
+        .content{
+            margin-top:25px;
+        }
+    }
+}

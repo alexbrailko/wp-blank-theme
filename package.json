@@ -1,0 +1,24 @@
+{
+  "name": "core",
+  "private": true,
+  "dependencies": {
+    "colors": "*",
+    "gulp": "*",
+    "gulp-concat": "*",
+    "gulp-cond": "*",
+    "gulp-less": "*",
+    "gulp-minify": "*",
+    "gulp-clean-css": "*",
+    "gulp-rename": "*",
+    "gulp-sourcemaps": "*",
+    "gulp-uglify": "*",
+    "gulp-util": "*",
+    "gulp-watch": "*"
+  },
+  "engine": "node >= 0.10",
+  "devDependencies": {
+    "gulp-jshint": "^2.0.4",
+    "gulp-plumber": "^1.1.0",
+    "jshint": "^2.9.4"
+  }
+}

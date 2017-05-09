@@ -1,0 +1,58 @@
+@text_color: #2f2f2f;  
+@text_secondary: #3d3d3d; //dark grey
+@primary_color: #d2a32f;
+@button: @primary_color; 
+@grey: #bebebe; 
+@heading: #717171;
+@light_grey: #9b9b9b;
+@footer: #777777;
+@border: #e5dfd7;
+
+
+
+
+
+
+
+
+
+@base_font_size: 15;
+
+
+/*
+ * Widths
+ */
+@wrapper_width: 1100px;
+@medium_width: 800px;  
+@mobile_width: 640px;
+@small_mobile_width: 480px;
+@flyout_breakpoint: 1100px;
+
+/*
+ * Media Query Breakpoints
+ */
+
+@desktop: ~"all and (min-width: " (@wrapper_width + 1) ~ ")";
+@tablet: ~"all and (min-width: " (@mobile_width + 1) ~ ") and (max-width: 1100px)";
+@large_tablet: ~"all and (max-width: 1024px)";
+@medium: ~"all and (max-width: @{medium_width})";
+@mobile: ~"all and (max-width: @{mobile_width})";
+@small_mobile: ~"all and (max-width: @{small_mobile_width})"; 
+@flyout: ~"all and (max-width: " @flyout_breakpoint ~ ")";
+@tabl_to_flyout: ~"all and (min-width: @{medium_width}) and (max-width: @wrapper_width)";
+
+/*
+ * Colors
+ */
+
+ @primary_color_color: #d81820;
+ @link_color: #e21c25;
+ @text_color: #707070;
+ @headings_color: #2e3236;
+ @border: #e5e5e5;
+ @light_bg: #f6f6f6;
+ @menu_color: #838383;
+ @dark_color: #15232c;
+ @dark_blue: #15232c;
+ @light_blue: #466477;
+ @light_text: #9d9d9d;

@@ -1,0 +1,193 @@
+/*
+ * Mixins
+ */
+
+.clearfix() {
+    *zoom: 1;
+
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+}
+
+.box(@float: left; @z_index: 1; @display: block; @position: relative) {
+    float: @float;
+    z-index: @z_index;
+    display: @display;
+    position: @position;
+}
+
+.fullBox(@width: 100%; @float: left; @z_index: 1; @display: block; @position: relative) {
+    .box(@float; @z_index; @display; @position);
+    width: @width;
+}
+
+.transitionPrefix(@prop, @time, @ease) {
+    -webkit-transition: e("-webkit-@{prop}") @time @ease;
+       -moz-transition:    e("-moz-@{prop}") @time @ease;
+        -ms-transition:     e("-ms-@{prop}") @time @ease;
+         -o-transition:      e("-o-@{prop}") @time @ease;
+            transition:                @prop @time @ease;
+}
+
+.transition(@transition) {
+    -webkit-transition: @transition;
+    -moz-transition:    @transition;
+    -ms-transition:     @transition;
+    -o-transition:      @transition;
+    transition:         @transition;
+}
+
+.transitionDelay(@delay) {
+    -webkit-transition-delay: @delay;
+    -moz-transition-delay: @delay;
+    -ms-transition-delay: @delay;
+    -o-transition-delay: @delay;
+    transition-delay: @delay;
+}
+
+.transitionDuration(@duration) {
+    -webkit-transition-duration: @duration;
+    -moz-transition-duration: @duration;
+    -o-transition-duration: @duration;
+    transition-duration: @duration;
+}
+
+.transform(@string){
+    -webkit-transform: @string;
+    -moz-transform:    @string;
+    -ms-transform:     @string;
+    -o-transform:      @string;
+    transform:         @string;
+}
+
+.translate(@translate) {
+    -webkit-transform: translate(@translate);
+    -moz-transform: translate(@translate);
+    -o-transform: translate(@translate);
+    -ms-transform: translate(@translate);
+    transform: translate(@translate);
+}
+
+.rotate(@degrees) {
+    -webkit-transform: rotate(@degrees);
+    -moz-transform: rotate(@degrees);
+    -o-transform: rotate(@degrees);
+    -ms-transform: rotate(@degrees);
+    transform: rotate(@degrees);
+}
+
+.transformStyle(@string) {
+    -webkit-transform-style: @string;
+    -moz-transform-style:    @string;
+    -ms-transform-style:     @string;
+    -o-transform-style:      @string;
+    transform-style:         @string;
+}
+
+.transformOrigin(@string) {
+    -webkit-transform-origin: @string;
+    -moz-transform-origin: @string;
+    -ms-transform-origin: @string;
+    -o-transform-origin: @string;
+    transform-origin: @string;
+}
+
+.ulStyle(@padding: 0, @margin: 0, @list_style: none) {
+    margin: @margin;
+    padding: @padding;
+    list-style: @list_style;
+}
+
+.gradient (@start_color: #2170b5, @end_color: #164b91) {
+    background-color: @start_color;
+    background: -webkit-gradient(linear, left top, left bottom, from(@start_color), to(@end_color));
+    background: -webkit-linear-gradient(top, @start_color, @end_color);
+    background: -moz-linear-gradient(top, @start_color, @end_color);
+    background: -ms-linear-gradient(top, @start_color, @end_color);
+    background: -o-linear-gradient(top, @start_color, @end_color);
+}
+
+.placeholder(@color: #000) {
+    &::-webkit-input-placeholder {
+        color: @color;
+    }
+
+    &:-moz-placeholder { /* Firefox 18- */
+        color: @color;
+    }
+
+    &::-moz-placeholder {  /* Firefox 19+ */
+        opacity: 1;
+        color: @color;
+    }
+
+    &:-ms-input-placeholder {
+        color: @color;
+    }
+}
+
+.font-face(@font_name, @font_file, @font_weight: normal, @font_style: normal) {
+    font-family: "@{font_name}";
+    src: url("@{font_file}.eot");
+    src: url("@{font_file}.eot?#iefix") format("embedded-opentype"),
+         url("@{font_file}.woff2") format("woff2"),
+         url("@{font_file}.woff") format("woff"),
+         url("@{font_file}.ttf") format("truetype"),
+         url("@{font_file}.svg#@{font_name}") format("svg");
+    font-weight: @font_weight;
+    font-style: @font_style;
+}
+
+.opacity(@opacity: 1) {
+    @ie_opacity: @opacity * 100;
+    filter: ~"alpha(opacity=@{ie_opacity})";
+    opacity: @opacity;
+}
+
+.rems(@value) {
+    @em_value : (@value / @base_font_size);
+    @rem_value: @em_value;
+    @px_value: (@base_font_size * @rem_value);
+    font-size: ~"@{px_value}px";
+    font-size: ~"@{rem_value}rem";
+}
+
+.keyframes(@name; @arguments) {
+    @-moz-keyframes @name { @arguments(); }
+    @-webkit-keyframes @name { @arguments(); }
+    @keyframes @name { @arguments(); }
+}
+
+.animation(@arguments) {
+    -webkit-animation: @arguments;
+    -moz-animation: @arguments;
+    animation: @arguments;
+}
+
+.fa(@unicode, @color: @text_color) {
+    content: "\@{unicode}";
+    font-family: "FontAwesome";
+    color: @color;
+}
+
+.overlay(@color: @primary_color, @opacity: 0.7 ) {
+    position: relative;
+
+    &:after {
+      position: absolute;
+      content: '';
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background-color: @color;
+      opacity: @opacity;
+    }
+}
