@@ -114,22 +114,26 @@
     background: -o-linear-gradient(top, @start_color, @end_color);
 }
 
-.placeholder(@color: #000) {
+.placeholder(@color: #000, @font_size: @base_font_size) {
     &::-webkit-input-placeholder {
         color: @color;
+        font-size: @font_size;
     }
 
     &:-moz-placeholder { /* Firefox 18- */
         color: @color;
+        font-size: @font_size;
     }
 
     &::-moz-placeholder {  /* Firefox 19+ */
         opacity: 1;
         color: @color;
+        font-size: @font_size;
     }
 
     &:-ms-input-placeholder {
         color: @color;
+        font-size: @font_size;
     }
 }
 

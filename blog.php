@@ -13,7 +13,7 @@ update_option('current_page_template','blog');
         <div class="blogPosts">
             <?php 
             $paged = get_query_var('paged') ? get_query_var('paged') : 1;
-            $post_page = new WP_Query( array( 'post_type' => 'post','posts_per_page' => '10', 'paged' => $paged) ); ?>
+            $post_page = new WP_Query( array( 'post_type' => 'post','posts_per_page' => '2', 'paged' => $paged) ); ?>
 
             <?php if ( $post_page->have_posts() ) : ?>
                 <ul>

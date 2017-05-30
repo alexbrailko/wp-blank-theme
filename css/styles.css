@@ -606,19 +606,6 @@ html[xmlns] .flexslider .slides {
     min-height: 430px;
   }
 }
-.sliderWrap .slider li.slick-slide {
-  position: relative;
-}
-.sliderWrap .slider li.slick-slide:after {
-  position: absolute;
-  content: '';
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  background-color: #000;
-  opacity: 0.5;
-}
 .sliderWrap .slider li a {
   display: block;
 }
@@ -1278,23 +1265,6 @@ textarea {
 /*
   * Editor styles
   */
-.wisywig p {
-  font-size: 14px;
-  font-size: 0.875rem;
-  margin-bottom: 20px;
-}
-.wisywig h2 {
-  font-size: 18px;
-  font-size: 1.125rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-.wisywig h3 {
-  font-size: 16px;
-  font-size: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
 .wisywig ul {
   margin-bottom: 22px;
 }
@@ -1977,7 +1947,6 @@ footer .col4 div.wpcf7-validation-errors {
   clear: both;
 }
 .topBanner .bannerBg {
-  position: relative;
   z-index: 5;
   position: absolute;
   top: 0;
@@ -1986,16 +1955,6 @@ footer .col4 div.wpcf7-validation-errors {
   right: 0;
   width: 2000px;
   max-width: 2000px;
-}
-.topBanner .bannerBg:after {
-  position: absolute;
-  content: '';
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  background-color: #000;
-  opacity: 0.5;
 }
 @media all and (max-width: 640px) {
   .topBanner .bannerBg {
