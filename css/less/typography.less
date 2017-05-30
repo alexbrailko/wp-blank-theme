@@ -6,23 +6,23 @@
 @medium_width: 800px;  
 @mobile_width: 640px;
 @small_mobile_width: 480px;
-@flyout_breakpoint: 800px;
+@flyout_breakpoint: @medium_width;
 
 /*
  * Media Query Breakpoints
  */
 
 @desktop: ~"all and (min-width: " (@wrapper_width + 1) ~ ")";
-@tablet: ~"all and (min-width: " (@mobile_width + 1) ~ ") and (max-width: @{wrapper_width})";
+//@tablet: ~"all and (min-width: " (@mobile_width + 1) ~ ") and (max-width: @{wrapper_width})";
+@tablet: ~"all and (min-width: " (@mobile_width + 1) ~ ") and (max-width: " (@wrapper_width + 19) ~ ")";
 @large_tablet: ~"all and (max-width: 1024px)";
 @medium: ~"all and (max-width: @{medium_width})";
 @mobile: ~"all and (max-width: @{mobile_width})";
 @small_mobile: ~"all and (max-width: @{small_mobile_width})";
-@flyout: ~"all and (max-width: @{flyout_breakpoint})";
 
 @base_font_size : 16;
 
- @border_radius: 4px;
+@border_radius: 4px;
 
 /*
  * Colors
@@ -36,9 +36,6 @@
  @light_bg: #f6f6f6;
  @menu_color: #838383;
  @dark_color: #15232c;
- @dark_blue: #15232c;
- @light_blue: #466477;
- @light_text: #a2a2a2;
  @button: @primary_color; 
 
 
@@ -72,12 +69,8 @@ body{
 	overflow-x:hidden;
     background-repeat: no-repeat;
     background-attachment: fixed;  	
-    font-family: 'Roboto', sans-serif!important;
-    //font-family: @primary_colorFont;
+    font-family: @primaryFont;
     color: @text_color;
-    min-width: 360px;
-    font-weight: 300;
-    //background: #000;
 }
 
 html, body{
@@ -249,15 +242,6 @@ textarea {
         color: @primary_color;
     }
 }
-
-.hover_bg(@button) {
-    .transition(background 0.3s);
-
-    &:hover { 
-        background: lighten(@button, 20%, relative);
-    }
-}
-
 
 .buttonSLider {
     border: 2px solid #fff;

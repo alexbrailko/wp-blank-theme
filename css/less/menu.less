@@ -3,12 +3,11 @@
  * Set up defaults
  */
  
-@flyout_breakpoint: @medium_width;// Defaults to mobile breakpoint but can be overwritten here
 @flyout_width: 70%;
 @flyout_button: @headings_color;
-@flyout_background: @light_text;
+@flyout_background: @text_color;
 @flyout_transition_time: 0.3s;
-@tabl_to_flyout: ~"all and (min-width: @{medium_width}) and (max-width: @wrapper_width)";
+@tabl_to_flyout: ~"all and (min-width: @{medium_width}) and (max-width: @{wrapper_width})";
 @from_flyout: ~"all and (min-width: " (@flyout_breakpoint + 1) ~ ")";
 
 @flyout: ~"all and (max-width: @{flyout_breakpoint})";
@@ -50,7 +49,7 @@
         }
 
         &.menu-item-has-children:after {
-            .fa('f107', @light_text);
+            .fa('f107', @text_color);
             .rems(13);
             position: absolute;
             /* margin: 0 auto; */
@@ -99,7 +98,7 @@
 
             li {
                 display: block;
-                border-bottom: 1px solid @light_text;
+                border-bottom: 1px solid @text_color;
                 background-color: rgba(0,0,0,.7);
 
                 @media @flyout {

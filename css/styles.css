@@ -2,6 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900');
 * {
   box-sizing: border-box;
 }
@@ -145,27 +146,6 @@ body {
 /*
  * Mixins
  */
-@font-face {
-  font-family: "Roboto Regular";
-  src: url("../fonts/Roboto-Regular/roboto-regular-webfont.eot");
-  src: url("../fonts/Roboto-Regular/roboto-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto-Regular/roboto-regular-webfont.woff2") format("woff2"), url("../fonts/Roboto-Regular/roboto-regular-webfont.woff") format("woff"), url("../fonts/Roboto-Regular/roboto-regular-webfont.ttf") format("truetype"), url("../fonts/Roboto-Regular/roboto-regular-webfont.svg#Roboto Regular") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Roboto Light";
-  src: url("../fonts/Roboto-Light/roboto-light-webfont.eot");
-  src: url("../fonts/Roboto-Light/roboto-light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto-Light/roboto-light-webfont.woff2") format("woff2"), url("../fonts/Roboto-Light/roboto-light-webfont.woff") format("woff"), url("../fonts/Roboto-Light/roboto-light-webfont.ttf") format("truetype"), url("../fonts/Roboto-Light/roboto-light-webfont.svg#Roboto Light") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Roboto Bold";
-  src: url("../fonts/Roboto-Bold/roboto-bold-webfont.eot");
-  src: url("../fonts/Roboto-Bold/roboto-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto-Bold/roboto-bold-webfont.woff2") format("woff2"), url("../fonts/Roboto-Bold/roboto-bold-webfont.woff") format("woff"), url("../fonts/Roboto-Bold/roboto-bold-webfont.ttf") format("truetype"), url("../fonts/Roboto-Bold/roboto-bold-webfont.svg#Roboto Bold") format("svg");
-  font-weight: 700;
-  font-style: normal;
-}
 @font-face {
   font-family: 'FontAwesome';
   src: url('../../fonts/fontawesome-webfont.eot?v=4.7.0');
@@ -535,7 +515,7 @@ html[xmlns] .flexslider .slides {
   left: -120px;
   z-index: 99;
 }
-@media all and (min-width:  641px ) and (max-width: 1100px), all and (max-width: 640px) {
+@media all and (min-width:  641px ) and (max-width:  1119px ), all and (max-width: 640px) {
   .left-arrow {
     display: none;
   }
@@ -561,7 +541,7 @@ html[xmlns] .flexslider .slides {
   right: -120px;
   z-index: 99;
 }
-@media all and (min-width:  641px ) and (max-width: 1100px), all and (max-width: 640px) {
+@media all and (min-width:  641px ) and (max-width:  1119px ), all and (max-width: 640px) {
   .right-arrow {
     display: none;
   }
@@ -743,7 +723,7 @@ html[xmlns] .flexslider .slides {
   display: table-cell;
   vertical-align: middle;
 }
-@media all and (max-width: 640px), all and (min-width:  641px ) and (max-width: 1100px) {
+@media all and (max-width: 640px), all and (min-width:  641px ) and (max-width:  1119px ) {
   .sliderWrap .innerText .slideshowText {
     padding: 0 20px;
   }
@@ -1036,10 +1016,8 @@ body {
   overflow-x: hidden;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  font-family: 'Roboto', sans-serif !important;
+  font-family: 'Roboto', sans-serif;
   color: #707070;
-  min-width: 360px;
-  font-weight: 300;
 }
 html,
 body {
@@ -1101,7 +1079,7 @@ img {
 }
 input,
 textarea {
-  font-family: 'Roboto Regular', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
@@ -1135,7 +1113,7 @@ textarea {
 .clear {
   clear: both;
 }
-@media all and (min-width:  641px ) and (max-width: 1100px), all and (min-width:  1101px ) {
+@media all and (min-width:  641px ) and (max-width:  1119px ), all and (min-width:  1101px ) {
   .page-wrap {
     min-height: 100%;
     /* equal to footer height */
@@ -1155,7 +1133,7 @@ textarea {
   margin: 0 auto;
   clear: both;
 }
-@media all and (min-width:  641px ) and (max-width: 1100px), all and (max-width: 640px) {
+@media all and (min-width:  641px ) and (max-width:  1119px ), all and (max-width: 640px) {
   .wrapper {
     padding: 0 15px;
   }
@@ -1361,7 +1339,7 @@ textarea {
   float: left;
   margin: 5px 0 0 15px;
 }
-@media all and (min-width: 800px) and (max-width: @wrapper_width) {
+@media all and (min-width: 800px) and (max-width: 1100px) {
   .mainMenu {
     width: calc(100% - 120px);
     margin-top: 25px;
@@ -1392,7 +1370,7 @@ textarea {
 .mainMenu li.menu-item-has-children:after {
   content: "\f107";
   font-family: "FontAwesome";
-  color: #a2a2a2;
+  color: #707070;
   font-size: 13px;
   font-size: 0.8125rem;
   position: absolute;
@@ -1441,7 +1419,7 @@ textarea {
 }
 .mainMenu li ul.sub-menu li {
   display: block;
-  border-bottom: 1px solid #a2a2a2;
+  border-bottom: 1px solid #707070;
   background-color: rgba(0, 0, 0, 0.7);
 }
 @media all and (max-width: 800px) {
@@ -1676,7 +1654,7 @@ textarea {
     position: fixed;
     top: 0;
     width: 70%;
-    background: #a2a2a2;
+    background: #707070;
     z-index: 20;
     overflow: auto;
     display: none;
@@ -1807,7 +1785,7 @@ footer:after {
 footer:after {
   clear: both;
 }
-@media all and (min-width:  641px ) and (max-width: 1100px), all and (max-width: 640px) {
+@media all and (min-width:  641px ) and (max-width:  1119px ), all and (max-width: 640px) {
   footer {
     padding: 35px 20px;
   }
@@ -1838,7 +1816,7 @@ footer .col4 {
     padding-left: 95px;
   }
 }
-@media all and (min-width:  641px ) and (max-width: 1100px) {
+@media all and (min-width:  641px ) and (max-width:  1119px ) {
   footer .col4 {
     padding-right: 10px;
   }
@@ -1966,7 +1944,7 @@ footer .col4 div.wpcf7-validation-errors {
 .pageWrap:after {
   clear: both;
 }
-@media all and (min-width:  641px ) and (max-width: 1100px), all and (max-width: 640px) {
+@media all and (min-width:  641px ) and (max-width:  1119px ), all and (max-width: 640px) {
   .pageWrap {
     padding: 0 20px;
   }
@@ -2070,7 +2048,6 @@ footer .col4 div.wpcf7-validation-errors {
   font-size: 26px;
   font-size: 1.625rem;
   color: #fff;
-  font-family: 'Roboto Regular', sans-serif;
   font-weight: normal;
 }
 .topBanner .topBannerContent p {
@@ -2079,7 +2056,7 @@ footer .col4 div.wpcf7-validation-errors {
   color: #fff;
   margin-top: 27px;
 }
-@media all and (min-width:  641px ) and (max-width: 1100px) {
+@media all and (min-width:  641px ) and (max-width:  1119px ) {
   .topBanner .topBannerContent p {
     margin-top: 15px;
   }
@@ -2102,7 +2079,7 @@ footer .col4 div.wpcf7-validation-errors {
 .blogPosts li .cont .date {
   font-size: 13px;
   font-size: 0.8125rem;
-  color: #a2a2a2;
+  color: #707070;
 }
 .blogPosts li .cont h3 {
   line-height: 25px;

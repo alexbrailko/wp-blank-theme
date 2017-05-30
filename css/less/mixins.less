@@ -191,3 +191,11 @@
       opacity: @opacity;
     }
 }
+
+.hover_bg(@button) {
+    .transition(background 0.3s);
+
+    &:hover { 
+        background: lighten(@button, 20%, relative);
+    }
+}
