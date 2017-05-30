@@ -307,3 +307,19 @@ function handleScroll() {
     };
  
 }( jQuery ));
+
+//sticky header 
+// $(window).scroll(function(){
+//     var sticky = $('header'),
+//        headerHeight = $('header').outerHeight(),
+//        scroll = $(window).scrollTop();
+
+//     if (scroll > headerHeight) {
+//         sticky.addClass('fixed');
+//         $('.page-wrap').css('margin-top', headerHeight);
+//     } 
+//     else {
+//         sticky.removeClass('fixed');
+//         $('.page-wrap').css('margin-top', 0);
+//     }
+// });

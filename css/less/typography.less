@@ -76,6 +76,37 @@ body{
 html, body{
 	height: 100%;
 }
+
+/* sticky footer */
+body {
+  display: flex;
+  flex-direction: column;
+}
+.page-wrap {
+  flex: 1 0 auto;
+}
+
+/* sticky header */
+header {
+    @keyframes slide-down {
+        0% {
+            opacity: 0;
+            transform: translateY(-100%);
+        } 
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        } 
+    }
+
+    &.fixed {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        animation: slide-down 0.7s;
+    }
+}
+
 .titleWrap {
     .clearfix();
 }
@@ -159,20 +190,6 @@ textarea {
     clear: both;
 }
 
-@media @tablet, @desktop {
-    .page-wrap {
-      min-height: 100%;
-      /* equal to footer height */  
-      margin-bottom: -355px; 
-    }
-    .page-wrap:after {
-      content: "";
-      display: block;
-    }
-    footer, .page-wrap:after {
-      height: 355px;
-    }
-}
 
 .wrapper{
 	max-width: @wrapper_width; 
