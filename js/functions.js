@@ -167,7 +167,7 @@ function slideShow() {
         $('.slider').slick({
             dots : true,
             infinite : true,
-            arrows : false,
+            arrows : true,
             autoplay : false,
             autoplaySpeed : speed,
             prevArrow: '<i class="fa fa-angle-left slideshowLeftArrow"></i>',

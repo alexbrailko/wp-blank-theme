@@ -14,14 +14,18 @@ update_option('current_page_template','contacts');
             <?php the_content(); ?>  
         </div>
         <div class="formContainer">
-            <?php echo do_shortcode('[contact-form-7 id="59"]'); ?>
+            <?php echo do_shortcode('[contact-form-7 id="79"]'); ?>
         </div>
-        <div class="map js_map"
-            id="map"
-            data-coords="55.95308679536677,-2.9794702799010793"
-            data-zoom="15"
-            >
+        <?php 
+
+        $location = get_field('map');
+
+        if( !empty($location) ):
+        ?>
+        <div class="acf-map">
+            <div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>"></div>
         </div>
+        <?php endif; ?>
     </div>
 </div> 
 
