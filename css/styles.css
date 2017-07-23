@@ -3029,6 +3029,7 @@ body {
   background-attachment: fixed;
   font-family: 'Roboto', sans-serif;
   color: #707070;
+  min-width: 360px;
 }
 html,
 body {

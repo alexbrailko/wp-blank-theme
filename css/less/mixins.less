@@ -163,6 +163,12 @@
     font-size: ~"@{rem_value}rem";
 }
 
+.ems(@value: @base_font_size, @context: @base_font_size) {
+    @em_value: (@value / @context);
+    font-size: ~"@{value}px";
+    font-size: ~"@{em_value}em";
+}
+
 .keyframes(@name; @arguments) {
     @-moz-keyframes @name { @arguments(); }
     @-webkit-keyframes @name { @arguments(); }
